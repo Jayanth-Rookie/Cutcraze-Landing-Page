@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import ServicesGrid from '@/components/ServicesGrid';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
-import PricingSection from '@/components/PricingSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingElements from '@/components/FloatingElements';
@@ -85,7 +84,6 @@ const Index = () => {
       </section>
       
       <TestimonialsCarousel />
-      <PricingSection />
       <ContactSection />
       <Footer />
     </div>

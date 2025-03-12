@@ -46,8 +46,11 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-cutcraze-dark-charcoal text-white">
       <div className="container mx-auto px-4">
         <h2 className="section-title text-center text-white">Get In Touch</h2>
-        <p className="section-subtitle text-center text-gray-300">
+        <p className="section-subtitle text-center text-gray-300 mb-4">
           Ready to elevate your content? Contact us today to discuss your project needs.
+        </p>
+        <p className="text-center text-cutcraze-teal text-lg mb-8">
+          Contact us for custom pricing tailored to your specific requirements.
         </p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
@@ -171,11 +174,11 @@ const ContactSection = () => {
                   >
                     <option value="" disabled>Select a service</option>
                     <option value="video-editing">Video Editing</option>
-                    <option value="color-grading">Color Grading</option>
+                    <option value="ai-avatar">AI Avatar Creation</option>
+                    <option value="graphic-animation">Graphic Animation</option>
+                    <option value="poster-making">Poster Making</option>
                     <option value="photo-retouching">Photo Retouching</option>
-                    <option value="motion-graphics">Motion Graphics</option>
-                    <option value="effects">Creative Effects</option>
-                    <option value="compositing">Compositing</option>
+                    <option value="color-grading">Color Grading</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
