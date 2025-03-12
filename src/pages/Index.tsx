@@ -9,6 +9,8 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingElements from '@/components/FloatingElements';
 import VantaBackground from '@/components/VantaBackground';
+import AnimatedParticles from '@/components/AnimatedParticles';
+import DynamicBackground from '@/components/DynamicBackground';
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,13 +24,17 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      {/* Dynamic backgrounds with layering */}
+      <DynamicBackground />
       <VantaBackground />
+      <AnimatedParticles />
       <FloatingElements />
+      
       <Navbar />
       <Hero />
       
       {/* Before/After Showcase */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/90 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center">See the Difference</h2>
           <p className="section-subtitle text-center">
@@ -51,7 +57,7 @@ const Index = () => {
       <ServicesGrid />
       
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-white">
+      <section id="portfolio" className="py-20 bg-white/90 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center">Our Portfolio</h2>
           <p className="section-subtitle text-center">
@@ -62,7 +68,7 @@ const Index = () => {
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div 
                 key={item}
-                className="group relative overflow-hidden rounded-xl shadow-lg aspect-video cursor-pointer"
+                className="group relative overflow-hidden rounded-xl shadow-lg aspect-video cursor-pointer transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl"
               >
                 <img 
                   src={`https://source.unsplash.com/random/600x400?film,edit&sig=${item}`} 

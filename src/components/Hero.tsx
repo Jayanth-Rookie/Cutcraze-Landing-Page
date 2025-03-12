@@ -1,7 +1,22 @@
 
 import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) - 0.5,
+        y: (e.clientY / window.innerHeight) - 0.5
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <div className="relative min-h-screen flex items-center overflow-hidden bg-cutcraze-dark-charcoal">
       {/* Video Background - we're keeping this but at reduced opacity */}
@@ -18,10 +33,36 @@ const Hero = () => {
         </video>
       </div>
       
+      {/* Dynamic light effects */}
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div 
+          className="absolute w-[40vw] h-[40vw] rounded-full blur-[100px] bg-cutcraze-teal/30 animate-pulse-glow"
+          style={{ 
+            left: `calc(10% + ${mousePosition.x * 20}px)`, 
+            top: `calc(30% + ${mousePosition.y * 20}px)`,
+            transition: 'left 0.5s ease-out, top 0.5s ease-out'
+          }}
+        />
+        <div 
+          className="absolute w-[35vw] h-[35vw] rounded-full blur-[100px] bg-cutcraze-purple/30 animate-pulse-glow [animation-delay:1s]"
+          style={{ 
+            right: `calc(15% + ${-mousePosition.x * 20}px)`, 
+            bottom: `calc(20% + ${-mousePosition.y * 20}px)`,
+            transition: 'right 0.5s ease-out, bottom 0.5s ease-out'
+          }}
+        />
+      </div>
+      
       {/* Content */}
       <div className="container mx-auto px-4 z-10 pt-20">
         <div className="max-w-3xl mx-auto md:mx-0">
-          <div className="mb-6 font-['Poppins'] animate-fade-in-up [animation-delay:0.2s] opacity-0">
+          <div 
+            className="mb-6 font-['Poppins'] animate-fade-in-up [animation-delay:0.2s] opacity-0"
+            style={{ 
+              transform: `translateX(${mousePosition.x * -10}px) translateY(${mousePosition.y * -10}px)`,
+              transition: 'transform 0.2s ease-out'
+            }}
+          >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
               <span className="block">AI-Powered</span>
               <span className="text-cutcraze-teal">Video</span>
@@ -34,16 +75,31 @@ const Hero = () => {
             </h1>
             <p className="text-sm uppercase tracking-widest mt-3 text-white/60 font-light">Lifelike AI avatars that speak and move naturally</p>
           </div>
-          <p className="text-xl text-gray-300 mb-8 animate-fade-in-up [animation-delay:0.4s] opacity-0 font-['Poppins'] font-light leading-relaxed">
+          <p 
+            className="text-xl text-gray-300 mb-8 animate-fade-in-up [animation-delay:0.4s] opacity-0 font-['Poppins'] font-light leading-relaxed"
+            style={{ 
+              transform: `translateX(${mousePosition.x * -5}px) translateY(${mousePosition.y * -5}px)`,
+              transition: 'transform 0.3s ease-out'
+            }}
+          >
             Revolutionize your content with AI avatar videos that automate both video and audio. 
             Stand out with cutting-edge technology and professional editing services.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:0.6s] opacity-0">
-            <a href="#contact" className="btn-primary flex items-center justify-center gap-2 text-lg">
-              Get Started <ArrowRight className="w-5 h-5" />
+          <div 
+            className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:0.6s] opacity-0"
+            style={{ 
+              transform: `translateX(${mousePosition.x * -2}px) translateY(${mousePosition.y * -2}px)`,
+              transition: 'transform 0.4s ease-out'
+            }}
+          >
+            <a href="#contact" className="btn-primary flex items-center justify-center gap-2 text-lg relative group overflow-hidden">
+              <span className="relative z-10">Get Started</span>
+              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cutcraze-purple to-cutcraze-light-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
-            <a href="#portfolio" className="btn-secondary flex items-center justify-center gap-2 text-lg">
-              View Our Work
+            <a href="#portfolio" className="btn-secondary flex items-center justify-center gap-2 text-lg relative group overflow-hidden">
+              <span className="relative z-10">View Our Work</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-cutcraze-teal to-cutcraze-light-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
           </div>
         </div>
