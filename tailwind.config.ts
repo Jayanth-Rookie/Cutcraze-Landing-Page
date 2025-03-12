@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cutcraze: {
+					purple: '#6E59A5',
+					'light-purple': '#9b87f5',
+					teal: '#33C3F0',
+					'dark-charcoal': '#1A1F2C',
+					'light-gray': '#F6F6F7'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'spin-slow': 'spin-slow 20s linear infinite',
+				'fade-in-up': 'fade-in-up 0.7s ease-out forwards'
 			}
 		}
 	},
