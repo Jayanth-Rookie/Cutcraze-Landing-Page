@@ -9,6 +9,7 @@ import PricingSection from '@/components/PricingSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingElements from '@/components/FloatingElements';
+import VantaBackground from '@/components/VantaBackground';
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,6 +23,7 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <VantaBackground />
       <FloatingElements />
       <Navbar />
       <Hero />
