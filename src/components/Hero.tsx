@@ -1,3 +1,4 @@
+
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
@@ -22,8 +23,8 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto md:mx-0">
           <div className="mb-6 font-['Poppins'] animate-fade-in-up [animation-delay:0.2s] opacity-0">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
-              <span className="block">Sculpting</span>
-              <span className="text-cutcraze-teal">Visual</span>
+              <span className="block">AI-Powered</span>
+              <span className="text-cutcraze-teal">Video</span>
               <span className="relative inline-block">
                 <span className="text-cutcraze-light-purple">Magic</span>
                 <svg className="absolute -bottom-2 left-0 w-full h-2 text-cutcraze-teal" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -31,11 +32,11 @@ const Hero = () => {
                 </svg>
               </span>
             </h1>
-            <p className="text-sm uppercase tracking-widest mt-3 text-white/60 font-light">where your footage transforms into art</p>
+            <p className="text-sm uppercase tracking-widest mt-3 text-white/60 font-light">Lifelike AI avatars that speak and move naturally</p>
           </div>
           <p className="text-xl text-gray-300 mb-8 animate-fade-in-up [animation-delay:0.4s] opacity-0 font-['Poppins'] font-light leading-relaxed">
-            Professional video and photo editing services that elevate your content. 
-            Stand out with cinema-quality edits tailored to your creative needs.
+            Revolutionize your content with AI avatar videos that automate both video and audio. 
+            Stand out with cutting-edge technology and professional editing services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:0.6s] opacity-0">
             <a href="#contact" className="btn-primary flex items-center justify-center gap-2 text-lg">

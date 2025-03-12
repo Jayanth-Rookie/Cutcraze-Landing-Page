@@ -1,5 +1,5 @@
 
-import { Scissors, Video, Image, FileVideo, PenTool, PanelTop } from 'lucide-react';
+import { Scissors, Video, Image, Bot, Sparkles, FileImage } from 'lucide-react';
 
 const services = [
   {
@@ -8,9 +8,19 @@ const services = [
     description: "Professional editing for any type of video content, from social media clips to cinema-quality films."
   },
   {
-    icon: <Scissors className="w-10 h-10 text-cutcraze-purple" />,
-    title: "Color Grading",
-    description: "Enhance your footage with professional color grading to set the perfect mood and visual style."
+    icon: <Bot className="w-10 h-10 text-cutcraze-purple" />,
+    title: "AI Avatar Creation",
+    description: "Create lifelike AI avatars that speak and move naturally, automating both video and audio for personalized content."
+  },
+  {
+    icon: <Sparkles className="w-10 h-10 text-cutcraze-teal" />,
+    title: "Graphic Animation",
+    description: "Dynamic and eye-catching graphic animations for marketing, presentations, social media, and more."
+  },
+  {
+    icon: <FileImage className="w-10 h-10 text-cutcraze-purple" />,
+    title: "Poster Making",
+    description: "Professional custom poster designs for events, marketing campaigns, or personal use."
   },
   {
     icon: <Image className="w-10 h-10 text-cutcraze-teal" />,
@@ -18,19 +28,9 @@ const services = [
     description: "Expert photo enhancement, from basic corrections to advanced beauty and product retouching."
   },
   {
-    icon: <FileVideo className="w-10 h-10 text-cutcraze-purple" />,
-    title: "Motion Graphics",
-    description: "Custom animations and motion graphics to make your videos more engaging and professional."
-  },
-  {
-    icon: <PenTool className="w-10 h-10 text-cutcraze-teal" />,
-    title: "Creative Effects",
-    description: "Add stunning visual effects to transform ordinary footage into extraordinary content."
-  },
-  {
-    icon: <PanelTop className="w-10 h-10 text-cutcraze-purple" />,
-    title: "Compositing",
-    description: "Seamlessly combine multiple visual elements to create compelling composite imagery."
+    icon: <Scissors className="w-10 h-10 text-cutcraze-purple" />,
+    title: "Color Grading",
+    description: "Enhance your footage with professional color grading to set the perfect mood and visual style."
   }
 ];
 
@@ -40,7 +40,7 @@ const ServicesGrid = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title text-center">Our Services</h2>
         <p className="section-subtitle text-center">
-          We offer a comprehensive range of professional editing services to bring your creative vision to life
+          Specialized in AI avatar creation and professional editing services to bring your creative vision to life
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
