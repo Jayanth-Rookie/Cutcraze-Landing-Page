@@ -33,8 +33,8 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8 font-medium">
           <a href="#services" className="hover:text-cutcraze-purple transition-colors">Services</a>
           <a href="#portfolio" className="hover:text-cutcraze-purple transition-colors">Portfolio</a>
-          <a href="#testimonials" className="hover:text-cutcraze-purple transition-colors">Testimonials</a>
-          <a href="#pricing" className="hover:text-cutcraze-purple transition-colors">Pricing</a>
+          {/* <a href="#testimonials" className="hover:text-cutcraze-purple transition-colors">Testimonials</a> */}
+          {/* <a href="#pricing" className="hover:text-cutcraze-purple transition-colors">Pricing</a> */}
           <a href="#contact" className="hover:text-cutcraze-purple transition-colors">Contact</a>
         </div>
         

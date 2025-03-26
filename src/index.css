@@ -233,3 +233,16 @@
   animation: wave 8s ease-in-out infinite;
   animation-delay: 1s;
 }
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-loading {
+  animation: loading 3s linear forwards;
+}

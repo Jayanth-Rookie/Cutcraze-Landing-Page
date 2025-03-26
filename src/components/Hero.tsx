@@ -1,118 +1,91 @@
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { ChevronDown, Video, Edit, PenTool, ImageIcon } from 'lucide-react';
+import VantaBackground from './VantaBackground';
 
-import { ArrowRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
-
-const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) - 0.5,
-        y: (e.clientY / window.innerHeight) - 0.5
-      });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+const HeroSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden bg-cutcraze-dark-charcoal">
-      {/* Video Background - we're keeping this but at reduced opacity */}
-      <div className="absolute inset-0 z-0">
-        <video 
-          className="w-full h-full object-cover opacity-20" 
-          autoPlay 
-          muted 
-          loop
-          playsInline
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-editing-a-video-in-a-studio-23493-large.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      
-      {/* Dynamic light effects */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div 
-          className="absolute w-[40vw] h-[40vw] rounded-full blur-[100px] bg-cutcraze-teal/30 animate-pulse-glow"
-          style={{ 
-            left: `calc(10% + ${mousePosition.x * 20}px)`, 
-            top: `calc(30% + ${mousePosition.y * 20}px)`,
-            transition: 'left 0.5s ease-out, top 0.5s ease-out'
-          }}
-        />
-        <div 
-          className="absolute w-[35vw] h-[35vw] rounded-full blur-[100px] bg-cutcraze-purple/30 animate-pulse-glow [animation-delay:1s]"
-          style={{ 
-            right: `calc(15% + ${-mousePosition.x * 20}px)`, 
-            bottom: `calc(20% + ${-mousePosition.y * 20}px)`,
-            transition: 'right 0.5s ease-out, bottom 0.5s ease-out'
-          }}
-        />
-      </div>
-      
-      {/* Content */}
-      <div className="container mx-auto px-4 z-10 pt-20">
-        <div className="max-w-3xl mx-auto md:mx-0">
-          <div 
-            className="mb-6 font-['Poppins'] animate-fade-in-up [animation-delay:0.2s] opacity-0"
-            style={{ 
-              transform: `translateX(${mousePosition.x * -10}px) translateY(${mousePosition.y * -10}px)`,
-              transition: 'transform 0.2s ease-out'
-            }}
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
-              <span className="block">AI-Powered</span>
-              <span className="text-cutcraze-teal">Video</span>
-              <span className="relative inline-block">
-                <span className="text-cutcraze-light-purple">Magic</span>
-                <svg className="absolute -bottom-2 left-0 w-full h-2 text-cutcraze-teal" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0,0 L100,5 L0,10" fill="currentColor" />
-                </svg>
-              </span>
+    <div className="relative h-screen">
+      <VantaBackground />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Video or Animation (Placeholder with gradient) */}
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-hero-pattern"></div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">
+            <span className="text-cutcraze-purple font-semibold">
+            Revolutionizing Video
+              </span>{" "}
+              with AI-Powered Avatars
             </h1>
-            <p className="text-sm uppercase tracking-widest mt-3 text-white/60 font-light">Lifelike AI avatars that speak and move naturally</p>
-          </div>
-          <p 
-            className="text-xl text-gray-300 mb-8 animate-fade-in-up [animation-delay:0.4s] opacity-0 font-['Poppins'] font-light leading-relaxed"
-            style={{ 
-              transform: `translateX(${mousePosition.x * -5}px) translateY(${mousePosition.y * -5}px)`,
-              transition: 'transform 0.3s ease-out'
-            }}
-          >
-            Revolutionize your content with AI avatar videos that automate both video and audio. 
-            Stand out with cutting-edge technology and professional editing services.
-          </p>
-          <div 
-            className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:0.6s] opacity-0"
-            style={{ 
-              transform: `translateX(${mousePosition.x * -2}px) translateY(${mousePosition.y * -2}px)`,
-              transition: 'transform 0.4s ease-out'
-            }}
-          >
-            <a href="#contact" className="btn-primary flex items-center justify-center gap-2 text-lg relative group overflow-hidden">
-              <span className="relative z-10">Get Started</span>
-              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-cutcraze-purple to-cutcraze-light-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
-            <a href="#portfolio" className="btn-secondary flex items-center justify-center gap-2 text-lg relative group overflow-hidden">
-              <span className="relative z-10">View Our Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cutcraze-teal to-cutcraze-light-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
+            
+            <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl text-balance">
+            "We at CutCraze, use AI to craft stunning videos, graphics, and designs—helping bring your creative vision to life with style, precision, and a touch of magic."
+            </p>
+            
+            <Button 
+              onClick={scrollToContact}
+              className="bg-gradient-to-r from-cutcraze-purple to-cutcraze-blue hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg rounded-full"
+            >
+              Contact Us
+            </Button>
+            
+            {/* Glassmorphic Service Cards */}
+            <div className="mt-16 w-full">
+              <div className="glass p-6 md:p-8 animate-float">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cutcraze-purple/20 mb-3">
+                      <Video size={20} className="text-cutcraze-purple" />
+                    </div>
+                    <h3 className="text-sm md:text-base font-medium">AI Avatar Videos</h3>
+                  </div>
+                  
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cutcraze-blue/20 mb-3">
+                      <Edit size={20} className="text-cutcraze-blue" />
+                    </div>
+                    <h3 className="text-sm md:text-base font-medium">Video Editing</h3>
+                  </div>
+                  
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cutcraze-purple/20 mb-3">
+                      <PenTool size={20} className="text-cutcraze-purple" />
+                    </div>
+                    <h3 className="text-sm md:text-base font-medium">Graphic Animation</h3>
+                  </div>
+                  
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cutcraze-blue/20 mb-3">
+                      <ImageIcon size={20} className="text-cutcraze-blue" />
+                    </div>
+                    <h3 className="text-sm md:text-base font-medium">Poster Design</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <ChevronDown size={32} className="text-foreground/60" />
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
+      </section>
     </div>
   );
 };
 
-export default Hero;
+export default HeroSection;

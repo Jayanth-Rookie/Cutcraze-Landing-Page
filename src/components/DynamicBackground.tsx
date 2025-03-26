@@ -36,34 +36,38 @@ const DynamicBackground = () => {
   
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
-      {/* Gradient orbs that follow mouse */}
-      <div 
-        className="absolute -left-1/4 -top-1/4 w-1/2 h-1/2 rounded-full blur-[150px] opacity-20 animate-float"
-        style={{ 
-          background: `radial-gradient(circle, hsl(${purpleHue}, 70%, 60%) 0%, transparent 70%)`,
-          transform: `translate(${mousePosition.x * 20}%, ${mousePosition.y * 20}%)`,
-          transition: 'transform 0.3s ease-out'
-        }}
-      />
-      
-      <div 
-        className="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 rounded-full blur-[150px] opacity-20 animate-float [animation-delay:1s]"
-        style={{ 
-          background: `radial-gradient(circle, hsl(${tealHue}, 70%, 60%) 0%, transparent 70%)`,
-          transform: `translate(${-mousePosition.x * 20}%, ${-mousePosition.y * 20}%)`,
-          transition: 'transform 0.5s ease-out'
-        }}
-      />
-      
-      {/* Background gradient that subtly shifts */}
-      <div 
-        className="absolute inset-0 opacity-40"
-        style={{
-          background: `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(51, 195, 240, 0.15) 0%, rgba(110, 89, 165, 0.15) 50%, rgba(26, 31, 44, 0.2) 100%)`,
-          transition: 'background 0.5s ease-out'
-        }}
-      />
-    </div>
+  {/* Gradient orbs that follow the mouse smoothly */}
+  <div 
+    className="absolute -left-1/3 -top-1/3 w-[60vw] h-[60vw] rounded-full blur-[180px] opacity-25 animate-float"
+    style={{ 
+      background: `radial-gradient(circle, hsl(${purpleHue}, 80%, 65%) 0%, transparent 90%)`,
+      transform: `translate(${mousePosition.x * 15}px, ${mousePosition.y * 15}px)`,
+      transition: 'transform 0.25s ease-out'
+    }}
+  />
+  
+  <div 
+    className="absolute -right-1/3 -bottom-1/3 w-[60vw] h-[60vw] rounded-full blur-[180px] opacity-25 animate-float [animation-delay:1s]"
+    style={{ 
+      background: `radial-gradient(circle, hsl(${tealHue}, 85%, 65%) 0%, transparent 80%)`,
+      transform: `translate(${-mousePosition.x * 15}px, ${-mousePosition.y * 15}px)`,
+      transition: 'transform 0.3s ease-out'
+    }}
+  />
+
+  {/* Background gradient with softer shifts */}
+  <div 
+    className="absolute inset-0 opacity-50"
+    style={{
+      background: `radial-gradient(circle at ${gradientX}% ${gradientY}%, 
+        rgba(51, 195, 240, 0.2) 10%, 
+        rgba(110, 89, 165, 0.25) 50%, 
+        rgba(26, 31, 44, 0.3) 100%)`,
+      transition: 'background 0.6s ease-out'
+    }}
+  />
+</div>
+
   );
 };
 

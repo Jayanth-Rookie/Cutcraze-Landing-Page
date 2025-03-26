@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import ServicesGrid from '@/components/ServicesGrid';
+// import ServicesGrid from '@/components/ServicesGrid';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import ContactSection from '@/components/ContactSection';
@@ -54,7 +54,7 @@ const Index = () => {
         </div>
       </section>
       
-      <ServicesGrid />
+      {/* <ServicesGrid /> */}
       
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-white/90 backdrop-blur-sm">
@@ -89,7 +89,7 @@ const Index = () => {
         </div>
       </section>
       
-      <TestimonialsCarousel />
+      {/* <TestimonialsCarousel /> */}
       <ContactSection />
       <Footer />
     </div>
