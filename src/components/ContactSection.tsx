@@ -1,5 +1,3 @@
-
-
 // export default ContactSection;
 import { useState } from 'react';
 import { Mail, Phone, Send, Check } from 'lucide-react';
@@ -50,7 +48,7 @@ const ContactSection = () => {
               <div className="space-y-6 mb-10">
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-full">
-                    <Mail className="w-5 h-5" />
+                    <Mail className=" bg-slate-800 text-slate-400 p-0 rounded-lg hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-400 hover:text-white transition-all duration-300" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-300 mb-1">Email Us</p>
@@ -96,7 +94,8 @@ const ContactSection = () => {
                     <textarea name="message" value={formState.message} onChange={handleChange} rows={5} className="bg-white/5 border border-white/10 text-white rounded-lg w-full p-3" placeholder="Tell us about your project..." required></textarea>
                   </div>
                   {error && <div className="text-red-500 text-sm bg-red-500/10 p-3 rounded-md">{error}</div>}
-                  <button type="submit" disabled={isSubmitting} className="bg-cutcraze-teal text-white py-3 px-6 rounded-lg w-full flex items-center justify-center">
+                  <button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white px-6 py-3 rounded-lg font-medium shadow-lg shadow-orange-500/20 transition-all duration-300 hover:shadow-orange-500/30
+ flex items-center justify-center">
                     {isSubmitting ? 'Sending...' : <><Send className="w-5 h-5 mr-2" /> Send Message</>}
                   </button>
                 </form>

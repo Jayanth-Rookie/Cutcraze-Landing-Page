@@ -17,17 +17,27 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
-      className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-8",
-        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 text-2xl font-bold text-cutcraze-purple">
-          <Scissors className="w-7 h-7" />
-          <span>CutCraze</span>
-        </a>
+<nav
+  className={cn(
+    "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-6",
+    isScrolled ? "bg-white/90 shadow-md py-3" : "bg-transparent py-5"
+  )}
+>
+  <div className="max-w-7xl mx-auto flex justify-between items-center">
+    {/* Logo Section */}
+    <a href="#" className="flex items-center gap-2">
+      <img
+        src="/Artboard 8.svg"
+        alt="CutCraze Logo"
+        className="h-12 w-auto"
+      />
+    </a>
+ 
+
+    
+  
+
+
         
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 font-medium">

@@ -64,12 +64,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cutcraze: {
-					purple: '#6E59A5',
-					'light-purple': '#9b87f5',
-					teal: '#33C3F0',
-					'dark-charcoal': '#1A1F2C',
-					'light-gray': '#F6F6F7'
-				}
+					purple: '#FF6B35',
+					'light-purple': '#FFB563',
+					teal: '#A6D37E',
+					'dark-charcoal': '#1D2D44',
+					'light-gray': '#F7F7F7'
+				},
+				
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

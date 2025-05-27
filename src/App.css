@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+img.logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 5rem; /* Equivalent to w-20 */
+  height: 5rem; /* Equivalent to h-20 */
+}
+
+@media (min-width: 768px) {
+  img.logo {
+    width: 6rem; /* Equivalent to md:w-24 */
+    height: 6rem; /* Equivalent to md:h-24 */
+  }
+}

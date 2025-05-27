@@ -54,7 +54,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, className }: BeforeAfterSl
     <div 
       ref={containerRef}
       className={`relative rounded-xl overflow-hidden ${className}`}
-      style={{ height: '400px' }}
+      style={{ height: '400px', width:'80%' }}
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
     >
