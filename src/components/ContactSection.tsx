@@ -21,12 +21,17 @@ const ContactSection = () => {
     setError('');
 
     try {
-      await axios.post('http://localhost:5000/api/contact', formState);
+      // ✅ Use the environment variable for the API URL
+      const API_URL = `${import.meta.env.VITE_API_URL}/api/contact`;
+      
+      // Post the form data to the correct backend URL
+      await axios.post(API_URL, formState);
+
       setIsSubmitted(true);
       setFormState({ name: '', email: '', message: '' });
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to submit form. Please try again.');
+      setError(err.response?.data?.message || 'Failed to submit form. Please try again.');
       console.error('Form submission error:', err);
     } finally {
       setIsSubmitting(false);
